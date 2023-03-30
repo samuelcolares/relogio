@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');
+
+:root{
+    --primary-color: black;
+    --secondary-color: white;
+    --shadow-color: rgba(255, 255, 255, 0.473)
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html.dark{
+    --primary-color: white;
+    --secondary-color: #333;
+}
+html{
+    transition: 0.5s ease-in;
+}
+html.dark{
+    background-color: #111;
+    color: var(--primary-color);
+}
+
+
+body{
+    font-family: 'Heebo', sans-serif;
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+
+.btn{
+    transition: 0.5s ease-in;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0px 0px 10px var(--shadow-color);
+    border: 0;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+}
+.toggle{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.toggle:focus{
+    outline: none;
+}
+.toggle:active{
+    transform: translateX(-50%) scale(0.97);
+}
+.buttons{
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.buttons .btn{
+    width: 100px;
+}
+
+.clock-container{
+    display: grid;
+    place-items: center;
+}
+.clock{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 2rem;
+    transition: 0.5s ease-in;
+    box-shadow: 0px 0px 10px var(--shadow-color);
+}
+.center-point{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform-origin: center; */
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border: 3px solid red;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    z-index: 2;
+    transition: background-color 0.5s ease-in;
+}
+.needle{
+    position: absolute;
+
+    width: 3px;
+    z-index: 2;
+    transition: 0.5s ease-in;
+
+    transform-origin: bottom center;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+}
+.needle.hour{
+    transform: translate(-50%, -100%) rotate(30deg);
+    background-color: var(--primary-color);
+    height: 65px;
+}
+.needle.minute{
+    transform: translate(-50%, -100%) rotate(60deg);
+    background-color: var(--primary-color);
+    height: 100px;
+}
+.needle.second{
+    transform: translate(-50%, -100%) rotate(60deg);
+    background-color: red;
+    height: 110px;
+}
+
+.time{
+    font-size: 60px;
+    text-shadow: 0px 4px 10px var(--shadow-color);
+}
+
+.date{
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-shadow: 0px 4px 10px var(--shadow-color);
+    transition: 0.5s ease-in;
+}
+.date .circle{
+    transition: 0.5s ease-in;
+    display: grid;
+    place-content: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    font-size: 15px;
+}
+
+.number{
+    position: absolute;
+    transition: 0.5s ease-in;
+    opacity: 0;
+}
+.number.show{
+    opacity: 1;
+}
+.number.one{
+    top: 6%;
+    left: 73%;
+    transform: translate(-50%);
+}
+.number.two{
+    top: 27%;
+    right: 8%;
+    transform: translateY(-50%);
+}
+.number.three{
+    top: 50%;
+    right: 1.5%;
+    transform: translateY(-50%);
+}
+.number.four{
+    top: 73%;
+    right: 8%;
+    transform: translateY(-50%);
+}
+.number.five{
+    bottom: 6%;
+    left: 73%;
+    transform: translateX(-50%);
+}
+.number.six{
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.number.seven{
+    bottom: 6%;
+    left: 27%;
+    transform: translateX(-50%);
+}
+.number.ten{
+    top: 27%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+.number.nine{
+    top: 50%;
+    left: 1.5%;
+    transform: translateY(-50%);
+}
+.number.eight{
+    top: 73%;
+    left: 8%;
+    transform: translateY(-50%);
+}
+.number.eleven{
+    top: 6%;
+    left: 27%;
+    transform: translate(-50%);
+}
+.number.twelve{
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+
